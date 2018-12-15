@@ -1,38 +1,6 @@
-################################################
-# LVM Backup script - for MySQL
-#
-################################################
-# Contact: 
-#	vincent.viallet@chinanetcloud.com
-#
-# ChangeLog:
-#	2009-08-12	VV	initial creation
-#	2009-08-25	VV	add comments + logs + enable use in master script
-#	2010-01-21	VV	add config file
-#	2010-04-20	JS	Fix a bug for when create lvm snapshot got warning in the mysql
-#	2014-10-29	SS	Allow script to use sudo, so we don't need to run as root user
-################################################
-################################################
-# Requirements from the Master script API
-#
-# INPUT:
-#  - $1 -- root destination backup folder
-#  - $2 -- archive PREFIX
-#  - $3 -- backup config file
-#
-# OUTPUT:
-#  - 1 backup archive tar.gz -- Naming Format: prefix_XXXXX.tar.gz
-#  - STDOUT -- to be appened to mail notice
-#  - STDERR -- to be appened to error log for mail notice
-################################################
+#!/bin/bash
 
 SCRIPT_PREFIX="mylvm"
-
-##################################################
-# Manage parameters
-##################################################
-#
-## Save parameters
 USE_SUDO=0
 DESTINATION_FOLDER="$1"
 PREFIX="$2"
