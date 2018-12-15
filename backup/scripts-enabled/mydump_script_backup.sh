@@ -1,41 +1,4 @@
 #!/bin/bash
-################################################
-# MySQL DB backup
-#
-# Contact: vincent.viallet@gmail.com
-# Version: 0.2
-# Changes:
-#   2009-03-10  VV  Initial creation
-#   2009-06-05  DL
-#   2010-01-21  VV  add config file
-#   2010-02-04  CH  add for loop to do the backup database by database
-#   2010-03-30  JS  add check binaries for mysql command and Mysql Log rotate 
-#   2010-09-06  DL  add Innodb option for the databases which only has Innodb tables
-#   2011-01-28  CH  Move the location of "flush logs" etc
-#                   Merge the parameter of mysqldump and creds file
-#                   Adjust the option for mysqldump during the backup
-#   2014-07-07  VV  Use information schema to get the non-innodb tables in a database
-#   2014-11-28  SS  Allow backup of multiple instances
-#                   Determine datadir location dynamically, rather than hard-coded
-#                   Use full path for commands, for security
-#                   Cleaned up CHANGELOG
-#   2015-01-08  SS  Fix --skip-column-name deprecated -> use --skip-column-names
-################################################
-# Requirements from the Master script API
-#
-# INPUT:
-#  - $1 -- root destination backup folder
-#  - $2 -- archive PREFIX
-#  - $3 -- backup config file
-#
-# OUTPUT:
-#  - 1 backup archive tar.gz -- Naming Format: prefix_XXXXX.tar.gz
-#  - STDOUT -- to be appened to mail notice
-#  - STDERR -- to be appened to error log for mail notice
-################################################
-# TODO:
-#  - backup databases individually
-#
 
 SCRIPT_PREFIX="mydump"
 
