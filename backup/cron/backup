@@ -1,0 +1,8 @@
+################################
+# Backup cronjobs
+# - daily backup at 3am
+#########################
+# run backup
+0 3 * * * bash /opt/ops_script/backup/master_backup_script.sh --run --config /opt/ops_script/backup/conf/backup.conf 
+# clean files
+30 3 * * * bash /opt/ops_script/backup/clean_local_backup.sh

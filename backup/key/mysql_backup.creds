@@ -1,0 +1,11 @@
+[mysqldump]
+user=opsbackupdb
+password=123456
+host=localhost
+socket=/var/lib/mysql/mysql.sock 
+
+[mysql]
+user=opsbackupdb
+password=123456
+host=localhost
+socket=/var/lib/mysql/mysql.sock 
